@@ -65,6 +65,7 @@ class DataHelper {
             return data
         }
 
+//        TODO: Bookmark Functionality
 //        fun isBookmarked(game: Game, user: User): Boolean {
 //            for (i in user.saved){
 //                if(i.title.contains(game.title)){
@@ -74,5 +75,32 @@ class DataHelper {
 //
 //            return false
 //        }
+
+//       TODO: Search Functionality
+        fun searchGame(input: String, currentData: ArrayList<Game>): ArrayList<Game>{
+            val data = ArrayList<Game>()
+            var pattern = Regex(input)
+
+            for(game in currentData){
+                if(pattern.containsMatchIn(game.title)){
+                    data.add(game)
+                }
+            }
+
+            return data
+        }
+
+//       TODO: Spinner Functionality
+        fun searchGenre(input: String, currentData: ArrayList<Game>): ArrayList<Game>{
+            val data = ArrayList<Game>()
+
+            for(game in currentData){
+                if(game.genre == input){
+                    data.add(game)
+                }
+            }
+
+            return data
+        }
     }
 }

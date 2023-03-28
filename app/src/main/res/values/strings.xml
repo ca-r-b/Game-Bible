@@ -6,7 +6,6 @@
     <string-array name="filter">
         <item>All</item>
         <item>Action-Adventure</item>
-        <item>Fantasy</item>
         <item>Puzzling</item>
         <item>Romance</item>
         <item>Racing</item>
