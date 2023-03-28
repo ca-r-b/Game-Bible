@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gb_color1"
+    tools:context=".BookmarkFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bmRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/row_item_catalog"
+        android:layout_marginBottom="60dp"/>
+
+</FrameLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/gb_color1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChangePassActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald_regular"
+            android:text="Old Password"
+            android:textColor="@color/white"
+            android:textSize="23sp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/passOldEt"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/cstm_et_field_background"
+            android:fontFamily="@font/mont_regular"
+            android:hint="Old Password"
+            android:padding="10dp"
+            android:textColor="@color/gb_color1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/oswald_regular"
+            android:text="New Password"
+            android:textColor="@color/white"
+            android:textSize="23sp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/passNew1Et"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/cstm_et_field_background"
+            android:fontFamily="@font/mont_regular"
+            android:hint="New Password"
+            android:padding="10dp"
+            android:textColor="@color/gb_color1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/oswald_regular"
+            android:text="Confirm New Password"
+            android:textColor="@color/white"
+            android:textSize="23sp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/passNew2Et"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/cstm_et_field_background"
+            android:fontFamily="@font/mont_regular"
+            android:hint="Confirm New Password"
+            android:padding="10dp"
+            android:textColor="@color/gb_color1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/mont_light"
+            android:layout_gravity="center"
+            android:text="Note: Minimum of 8 characters"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/passSaveBtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/cstm_btn_field_background"
+        android:fontFamily="@font/mont_bold"
+        android:text="SAVE NEW PASSWORD"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gb_color1"
+    tools:context=".SettingsFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/setTopView"-->
+<!--            android:background="@drawable/cstm_home_top_background"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingTop="20dp"-->
+<!--            android:paddingBottom="20dp"-->
+<!--            android:paddingStart="20dp"-->
+<!--            android:fontFamily="@font/oswald_bold"-->
+<!--            android:text="Settings"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="25sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setProfileMenu"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/setProfileMenuIv1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/setProfileMenuTv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/setProfileMenuTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:fontFamily="@font/mont_regular"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/setProfileMenuIv1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_forward_ios" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:background="#4AFFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <!--    TODO ............................ DIVIDER   -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setAccountMenu"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/setAccountMenuIv1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/setAccountMenuTv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_manage_account" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/setAccountMenuTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Account Password"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:fontFamily="@font/mont_regular"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/setAccountMenuIv1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_forward_ios" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:background="#4AFFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <!--    TODO ............................ DIVIDER   -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setFBMenu"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/setFBMenuIv1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/setFBMenuTv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_share" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/setFBMenuTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connect Account to Facebook"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:fontFamily="@font/mont_regular"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/setFBMenuIv1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_forward_ios" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:background="#4AFFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <!--    TODO ............................ DIVIDER   -->
+
+        <!--    TODO ............................ DIVIDER   -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setLogoutMenu"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/setLogoutMenuIv1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/setLogoutMenuTv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_logout" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/setLogoutMenuTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log Out"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:fontFamily="@font/mont_regular"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/setLogoutMenuIv1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:background="#4AFFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <!--    TODO ............................ DIVIDER   -->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/my_logo_with_label"
+            />
+        
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="2023 Game Bible. All rights reserved."
+            android:textColor="#56FFFFFF"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</FrameLayout>

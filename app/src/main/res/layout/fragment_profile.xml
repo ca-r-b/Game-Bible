@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/gb_color1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImgIv"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="3dp"
+            android:elevation="10dp"
+            android:src="@drawable/sample_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/profileNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Sora_kun"
+            android:fontFamily="@font/mont_bold"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileImgIv"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/profileBioDiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/profileNameTv">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#6BFFFFFF"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/profileBioLblTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Biography"
+                android:fontFamily="@font/oswald_regular"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/profileBioTv"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginTop="15dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet accumsan massa, non vestibulum lectus vestibulum ut. Curabitur orci urna, vehicula ut ornare a, dapibus quis eros. Integer lorem urna, varius et ex a, vehicula posuere sem. Duis vulputate sapien quis diam ultricies semper. In hac habitasse platea dictumst. Morbi tortor sapien, congue id consectetur ac, faucibus at lectus. Duis elementum porta nisl sit amet porttitor. Integer tincidunt nulla justo, in dignissim lorem hendrerit rhoncus. Nunc pretium porttitor enim, id tincidunt ante ornare ut. Vivamus a massa elit. Cras enim ipsum, pellentesque non eleifend at, volutpat non dui. Suspendisse eu metus non nulla auctor posuere a efficitur dui. Praesent id est id arcu convallis aliquet quis eget neque. Quisque urna nisi, tempus a elit euismod, maximus tristique dui. Integer quis commodo turpis, vitae finibus nisi. Phasellus nibh nisl, porta vel fermentum at, laoreet at dui."
+                android:fontFamily="@font/mont_light"
+                android:textColor="@color/white"
+                android:justificationMode="inter_word"
+                android:textSize="15sp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

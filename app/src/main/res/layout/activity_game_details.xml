@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gb_color1"
+    tools:context=".GameDetailsActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+<!--        TODO: ................ Header ................-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/detThumbIv"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:srcCompat="@drawable/sample_1"
+            android:scaleType="fitXY"
+            />
+
+<!--        TODO: ................ Title with Icons ................ -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+            
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/detTitleTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kingdom Hearts 3"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/oswald_regular"
+                android:layout_marginEnd="10dp"/>
+            
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/detSpeechIv"
+                android:layout_width="30dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_volume_down"
+                android:layout_marginEnd="10dp"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/detShareIv"
+                android:layout_width="30dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_share"/>
+            
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+<!--        TODO: ................ Description of Game ................ -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detDescTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="KINGDOM HEARTS III tells the story of the power of friendship as Sora and his friends embark on a perilous adventure. Set in a vast array of Disney and Pixar worlds, KINGDOM HEARTS follows the journey of Sora, a young boy and unknowing heir to a spectacular power. Sora is joined by Donald Duck and Goofy to stop an evil force known as the Heartless from invading and overtaking the universe."
+            android:textColor="@color/white"
+            android:fontFamily="@font/mont_light"/>
+
+<!--        TODO: ................ Description of Game ................ -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detDateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:text="Release Date: January 25, 2019"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mont_light"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detGenreTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Genre: Action-Adventure"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mont_light"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detDevTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Developer: Square Enix Business Division 3"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mont_light"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detPubTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Publisher: Square Enix"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mont_light"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="20dp"
+            android:background="#4AFFFFFF"
+            android:layout_gravity="center"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Official Trailer"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/oswald_regular"/>
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/detYTPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/detViewBtn"
+            android:background="@color/gb_color3"
+            android:text="View Community Reviews"
+            android:textColor="@color/white"
+            android:fontFamily="@font/oswald_regular"
+            android:padding="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:layout_gravity="center_horizontal"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>
