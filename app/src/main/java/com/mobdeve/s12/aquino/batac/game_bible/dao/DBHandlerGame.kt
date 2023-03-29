@@ -14,14 +14,14 @@ class DBHandlerGame(context: Context): SQLiteOpenHelper(context, DB_NAME, null, 
 //      TODO: Columns
         private val GAME_ID = "id"
         private val GAME_TITLE = "title"
-//        private val GAME_IMG =
+//        private val GAME_IMG = IMAGE TODO: Figure out how to store images in SQLite
         private val GAME_DESC = "description"
         private val GAME_GENRE = "genre"
         private val GAME_DATE = "date"
         private val GAME_DEVELOPER = "developer"
         private val GAME_PUBLISHER = "publisher"
         private val GAME_TRAILER = "trailer"
-        private val GAME_STATS = "stats"
+        private val GAME_SECTION = "section"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -34,7 +34,7 @@ class DBHandlerGame(context: Context): SQLiteOpenHelper(context, DB_NAME, null, 
                 "$GAME_DEVELOPER TEXT, " +
                 "$GAME_PUBLISHER TEXT, " +
                 "$GAME_TRAILER TEXT, " +
-                "$GAME_STATS FLOAT)"
+                "$GAME_SECTION TEXT)"
 
         db?.execSQL(CREATE_TABLE)
     }

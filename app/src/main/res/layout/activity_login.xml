@@ -9,8 +9,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/loginLogoIv"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:layout_marginTop="80dp"
         app:srcCompat="@drawable/my_logo_with_label"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +45,7 @@
             android:layout_marginTop="25dp"
             android:background="@drawable/cstm_et_field_background"
             android:hint="Password"
+            android:inputType="textPassword"
             android:padding="10dp"
             android:textColor="@color/gb_color1"
             android:fontFamily="@font/mont_regular"/>

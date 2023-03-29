@@ -1,7 +1,9 @@
 package com.mobdeve.s12.aquino.batac.game_bible
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
@@ -16,5 +18,14 @@ class RegisterActivity : AppCompatActivity() {
 
         // Hide action bar
         supportActionBar?.hide()
+
+        binding.regRegBtn.setOnClickListener {
+            Toast.makeText(this, "Account Created Successfully", Toast.LENGTH_SHORT).show()
+            finish()
+        }
+
+        binding.regLoginBtn.setOnClickListener {
+            finish()
+        }
     }
 }

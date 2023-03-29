@@ -28,7 +28,7 @@ class GameDetailsActivity : AppCompatActivity() {
 //      Show tool bar back button
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-//        TODO: Replace details accordingly
+//        TODO: Replace details accordingly (With SQLite)
 //        TODO: Add Reviews + Stats LATER
         var intent = intent
         binding.detTitleTv.text = intent.getStringExtra("title")
@@ -73,6 +73,24 @@ class GameDetailsActivity : AppCompatActivity() {
             ) {
                 // this method is called if video has ended,
                 super.onStateChange(youTubePlayer, state)
+            }
+
+            override fun onPlaybackRateChange(
+                youTubePlayer: YouTubePlayer,
+                playbackRate: PlayerConstants.PlaybackRate
+            ) {
+                super.onPlaybackRateChange(youTubePlayer, playbackRate)
+            }
+
+            override fun onVideoLoadedFraction(
+                youTubePlayer: YouTubePlayer,
+                loadedFraction: Float
+            ) {
+                super.onVideoLoadedFraction(youTubePlayer, loadedFraction)
+            }
+
+            override fun onError(youTubePlayer: YouTubePlayer, error: PlayerConstants.PlayerError) {
+                super.onError(youTubePlayer, error)
             }
         })
 

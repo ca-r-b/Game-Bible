@@ -15,9 +15,6 @@ class AddReviewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//      Show tool bar back button
-//      supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
 //      Hide action bar
         supportActionBar?.hide()
 

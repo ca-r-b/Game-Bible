@@ -3,19 +3,19 @@ package com.mobdeve.s12.aquino.batac.game_bible
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import com.mobdeve.s12.aquino.batac.game_bible.databinding.ActivityFacebookBinding
+import com.mobdeve.s12.aquino.batac.game_bible.databinding.ActivityBookmarkBinding
 
-class FacebookActivity : AppCompatActivity() {
+class BookmarkActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityFacebookBinding
+    private lateinit var binding: ActivityBookmarkBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityFacebookBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-//      Show tool bar back button
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        binding = ActivityBookmarkBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 
     //  Finish activity after clicking back button on ToolBar

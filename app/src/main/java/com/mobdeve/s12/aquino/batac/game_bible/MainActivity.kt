@@ -25,27 +25,22 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.homeNavItem -> {
                     replaceFragment(HomeFragment())
-                    this.setTitle("Home")
+                    this.title = "Home"
                 }
 
                 R.id.searchNavItem -> {
                     replaceFragment(SearchFragment())
-                    this.setTitle("Search and Filter")
-                }
-
-                R.id.savedNavItem -> {
-                    replaceFragment(BookmarkFragment())
-                    this.setTitle("Saved for Later")
+                    this.title = "Search and Filter"
                 }
 
                 R.id.profileNavItem -> {
                     replaceFragment(ProfileFragment())
-                    this.setTitle("Your Profile")
+                    this.title = "Your Profile"
                 }
 
-                R.id.settingsNavItem -> {
+                R.id.menuNavItem -> {
                     replaceFragment(SettingsFragment())
-                    this.setTitle("Settings")
+                    this.title = "Menu and Settings"
                 }
 
             }

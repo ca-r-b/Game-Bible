@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
 //      TODO Setup 2nd RecyclerView (Community Recommendations)
 
 //      TODO Logic for changing arraylist
-        gameList2 = DataHelper.searchSection("Discovery Queue", DataHelper.loadData())
+        gameList2 = DataHelper.searchSection("Top Selling", DataHelper.loadData())
 
         adapter2 = HomeAdapter(gameList2)
 

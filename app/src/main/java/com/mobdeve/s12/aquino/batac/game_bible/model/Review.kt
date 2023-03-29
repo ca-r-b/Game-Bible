@@ -6,12 +6,3 @@ class Review(
     val gameTitle: String,
     val doesRecommend: Boolean
 )
-
-/*
-* if(doesRecommend){
-*   likes++
-* }else{
-*   dislikes++
-* }
-*
-* */

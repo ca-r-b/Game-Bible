@@ -27,6 +27,7 @@ class SearchFragment : Fragment() {
 //      TODO: Setup Recycler View
         gameList = DataHelper.loadData()
 
+//      Default Adapter
         adapter = HomeAdapter(gameList)
 
         val layoutManager = LinearLayoutManager(context)

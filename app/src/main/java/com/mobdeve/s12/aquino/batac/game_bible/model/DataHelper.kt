@@ -108,7 +108,7 @@ class DataHelper {
                     "FromSoftware",
                     "Bandai Namco Entertainment",
                     "AKXiKBnzpBQ",
-                    "Discovery Queue"
+                    "Top Selling"
                 )
             )
 
@@ -122,7 +122,7 @@ class DataHelper {
                     "Supermassive Games",
                     "2k",
                     "2Cst4YHdHXI",
-                    "Discovery Queue"
+                    "Top Selling"
                 )
             )
 

@@ -13,20 +13,14 @@
         />
 
     <item
-        android:id="@+id/savedNavItem"
-        android:title="Saved"
-        android:icon="@drawable/ic_bookmark"
-        />
-
-    <item
         android:id="@+id/profileNavItem"
         android:title="Profile"
         android:icon="@drawable/ic_person"
         />
 
     <item
-        android:id="@+id/settingsNavItem"
-        android:title="Settings"
-        android:icon="@drawable/ic_settings"
+        android:id="@+id/menuNavItem"
+        android:title="Menu"
+        android:icon="@drawable/ic_menu"
         />
 </menu>

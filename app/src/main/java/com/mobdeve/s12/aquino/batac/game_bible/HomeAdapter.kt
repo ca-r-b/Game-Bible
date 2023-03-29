@@ -50,8 +50,10 @@ class HomeAdapter(val data: ArrayList<Game>): RecyclerView.Adapter<HomeAdapter.H
 
             /*TODO
                 1. Add/Remove data to/from User's library (Bookmarks)
-                2. Change image resource
+                2. Change image resource for every click
+                3. Update ArrayList / Database for Bookmark
             */
+
             holder.itemHomeBinding.homeSaveIv.setImageResource(R.drawable.ic_library_add_check)
         }
     }
@@ -61,8 +63,11 @@ class HomeAdapter(val data: ArrayList<Game>): RecyclerView.Adapter<HomeAdapter.H
             itemHomeBinding.homeTitleTv.text = game.title
             itemHomeBinding.homeGenreTv.text = game.genre
             itemHomeBinding.homePicIv.setImageResource(game.img)
+
 //            TODO: Replace Image Resource of bookmark if part of saved
-//            itemCatalogBinding.homeSaveIv.setImageResource(R.drawable.ic_library_add_check)
+//            if(!game.test){
+//                itemHomeBinding.homeSaveIv.setImageResource(R.drawable.ic_library_add_check)
+//            }
         }
 
     }

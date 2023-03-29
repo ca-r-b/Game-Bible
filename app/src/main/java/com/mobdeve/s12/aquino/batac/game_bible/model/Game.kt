@@ -9,7 +9,7 @@ class Game(
     val developer: String,
     val publisher: String,
     val trailer: String,
-    var section: String
+    var section: String,
 
 //    val reviews: ArrayList<Review>
 

@@ -23,8 +23,18 @@ class SettingsFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.setSavedMenu.setOnClickListener {
+            var intent = Intent(it.context, BookmarkActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.setAccountMenu.setOnClickListener {
             var intent = Intent(it.context, ChangePassActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.setFBMenu.setOnClickListener {
+            var intent = Intent(it.context, FacebookActivity::class.java)
             startActivity(intent)
         }
 
