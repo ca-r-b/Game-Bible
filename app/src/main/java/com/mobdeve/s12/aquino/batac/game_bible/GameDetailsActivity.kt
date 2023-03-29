@@ -8,6 +8,7 @@ import android.speech.tts.TextToSpeech
 import android.view.MenuItem
 import android.widget.Toast
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.ActivityGameDetailsBinding
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import org.w3c.dom.Text
@@ -36,7 +37,7 @@ class GameDetailsActivity : AppCompatActivity() {
         binding.detDateTv.text = "Release Date: " + intent.getStringExtra("releaseDate")
         binding.detDevTv.text = "Developer: " + intent.getStringExtra("developer")
         binding.detPubTv.text = "Publisher: " + intent.getStringExtra("publisher")
-        binding.detThumbIv.setImageResource(intent.getIntExtra("img1", 0))
+        binding.detThumbIv.setImageResource(intent.getIntExtra("img", 0))
 
 //      Setup Text to Speech
         tts = TextToSpeech(applicationContext, TextToSpeech.OnInitListener {
@@ -63,7 +64,15 @@ class GameDetailsActivity : AppCompatActivity() {
         binding.detYTPlayer.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
                 // loading the selected video into the YouTube Player
-                youTubePlayer.loadVideo(videoID, 0f)
+                youTubePlayer.cueVideo(videoID, 0f)
+            }
+
+            override fun onStateChange(
+                youTubePlayer: YouTubePlayer,
+                state: PlayerConstants.PlayerState
+            ) {
+                // this method is called if video has ended,
+                super.onStateChange(youTubePlayer, state)
             }
         })
 

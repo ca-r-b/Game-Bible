@@ -69,11 +69,11 @@
             android:fontFamily="@font/mont_regular"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addRevReco1Btn"
+            android:id="@+id/addRevRecoBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="#5FA8D3"
+            android:background="@color/gb_color2"
             android:text="RECOMMEND THIS GAME"
             android:textColor="@color/white"
             android:fontFamily="@font/mont_bold"/>
@@ -82,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="*Not pressing this button will automatically display that you do NOT recommend the game."
+            android:text="*Not pressing this button will automatically display that you do NOT recommend the game (Gray means you recommended)."
             android:textStyle="italic"
             android:textColor="#8E8E8E"
             android:fontFamily="@font/mont_regular"/>

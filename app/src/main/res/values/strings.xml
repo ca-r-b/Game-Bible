@@ -6,9 +6,10 @@
     <string-array name="filter">
         <item>All</item>
         <item>Action-Adventure</item>
-        <item>Puzzling</item>
-        <item>Romance</item>
-        <item>Racing</item>
+        <item>Fighting</item>
+        <item>Horror</item>
+        <item>Sports</item>
+        <item>Simulation</item>
     </string-array>
 
 </resources>

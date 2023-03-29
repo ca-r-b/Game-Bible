@@ -29,12 +29,12 @@ class HomeAdapter(val data: ArrayList<Game>): RecyclerView.Adapter<HomeAdapter.H
         */
 
         holder.itemHomeBinding.homeContainerLayout.setOnClickListener{
-            Toast.makeText(it.context, "Clicked ${data[position].title}", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(it.context, "Clicked ${data[position].title}", Toast.LENGTH_SHORT).show()
 
             var intent = Intent(it.context, GameDetailsActivity::class.java)
 
             intent.putExtra("title", data[position].title)
-            intent.putExtra("img1", data[position].img1)
+            intent.putExtra("img", data[position].img)
             intent.putExtra("desc", data[position].desc)
             intent.putExtra("genre", data[position].genre)
             intent.putExtra("releaseDate", data[position].releaseDate)
@@ -60,7 +60,7 @@ class HomeAdapter(val data: ArrayList<Game>): RecyclerView.Adapter<HomeAdapter.H
         fun bindData(game: Game){
             itemHomeBinding.homeTitleTv.text = game.title
             itemHomeBinding.homeGenreTv.text = game.genre
-            itemHomeBinding.homePicIv.setImageResource(game.img1)
+            itemHomeBinding.homePicIv.setImageResource(game.img)
 //            TODO: Replace Image Resource of bookmark if part of saved
 //            itemCatalogBinding.homeSaveIv.setImageResource(R.drawable.ic_library_add_check)
         }

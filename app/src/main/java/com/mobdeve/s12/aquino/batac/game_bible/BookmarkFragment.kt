@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.FragmentBookmarkBinding
-import com.mobdeve.s12.aquino.batac.game_bible.databinding.FragmentHomeBinding
 import com.mobdeve.s12.aquino.batac.game_bible.model.DataHelper
 import com.mobdeve.s12.aquino.batac.game_bible.model.Game
 

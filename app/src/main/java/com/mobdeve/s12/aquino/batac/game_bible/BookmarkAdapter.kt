@@ -25,7 +25,7 @@ class BookmarkAdapter(val data: ArrayList<Game>): RecyclerView.Adapter<BookmarkA
         fun bindData(game: Game){
             itemCatalogBinding.homeTitleTv.text = game.title
             itemCatalogBinding.homeGenreTv.text = game.genre
-            itemCatalogBinding.homePicIv.setImageResource(game.img1)
+            itemCatalogBinding.homePicIv.setImageResource(game.img)
 
 //            TODO: Replace Image Resource of bookmark if part of saved
 //            itemCatalogBinding.homeSaveIv.setImageResource(R.drawable.ic_library_add_check)

@@ -22,6 +22,7 @@ class ViewReviewActivity : AppCompatActivity() {
             var intent = Intent(this, AddReviewActivity::class.java)
 
             startActivity(intent)
+            finish()
         }
     }
 

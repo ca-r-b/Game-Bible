@@ -4,21 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gb_color1"
     tools:context=".HomeFragment">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/gb_color1">
+        android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/homeRecyclerView"
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/row_item_catalog"
-            android:layout_marginBottom="60dp"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="Featured Games"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:fontFamily="@font/oswald_bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/homeRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/row_item_catalog" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="Discovery Queues"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:fontFamily="@font/oswald_bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/homeCommRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/row_item_catalog"
+                android:layout_marginBottom="60dp"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+
 
 </FrameLayout>

@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mobdeve.s12.aquino.batac.game_bible.databinding.FragmentBookmarkBinding
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.FragmentSearchBinding
 import com.mobdeve.s12.aquino.batac.game_bible.model.DataHelper
 import com.mobdeve.s12.aquino.batac.game_bible.model.Game
@@ -36,7 +35,7 @@ class SearchFragment : Fragment() {
         binding.searchRecyclerView.setHasFixedSize(true)
         binding.searchRecyclerView.adapter = adapter
 
-//      TODO: Setup Searching
+//      TODO: Setup Searching - Current code is subject to change after DB application
         binding.searchBarSv.setOnQueryTextListener(object: OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if(query != null){
@@ -51,7 +50,6 @@ class SearchFragment : Fragment() {
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 if(newText != null){
-                    // TODO Change gameList if possible
                     var newDataSet = DataHelper.searchGame(newText, gameList)
                     binding.searchRecyclerView.adapter = HomeAdapter(newDataSet)
                 }else{
@@ -64,7 +62,7 @@ class SearchFragment : Fragment() {
 
         var spinnerSearch = ""
 
-//      TODO: Setup Filter (Spinner)
+//      TODO: Setup Filter (Spinner) - Current code is subject to change after DB application
         binding.searchFilterSp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 // Leave function blank as there is always an option selected
