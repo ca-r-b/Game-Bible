@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "269084194833",
+    "project_id": "game-bible-fecc0",
+    "storage_bucket": "game-bible-fecc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269084194833:android:53e5782a48ada8fd1a99b0",
+        "android_client_info": {
+          "package_name": "com.mobdeve.s12.aquino.batac.game_bible"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269084194833-4knd1up6np0058j4ilp7tsb3up4k52ei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbCrlbejhkS0aU-GiCanmE4qmgVN2JsvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269084194833-4knd1up6np0058j4ilp7tsb3up4k52ei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
