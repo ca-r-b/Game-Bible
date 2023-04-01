@@ -5,6 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.ActivityAddReviewBinding
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.ActivityViewReviewBinding
 
@@ -21,10 +22,14 @@ class AddReviewActivity : AppCompatActivity() {
         binding = ActivityAddReviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.addRevCancelBtn.setOnClickListener{
-            var intent = Intent(this, ViewReviewActivity::class.java)
+        val title = intent.getStringExtra("title").toString()
 
-            startActivity(intent)
+        binding.addRevCancelBtn.setOnClickListener{
+//            TODO: Subject to change
+            var i = Intent(this, ViewReviewActivity::class.java)
+            i.putExtra("title", title)
+
+            startActivity(i)
             finish()
         }
 
@@ -33,10 +38,11 @@ class AddReviewActivity : AppCompatActivity() {
         binding.addRevSaveBtn.setOnClickListener {
 //            var intent = Intent(this, )
 //            startActivity()
-//            TODO: Try apply yung ActivityLauncher thing dito + Return to View Review
-            var intent = Intent(this, ViewReviewActivity::class.java)
+//            TODO: Try apply yung ActivityLauncher + Return to View Review
+            var i = Intent(this, ViewReviewActivity::class.java)
+            i.putExtra("title", title)
 
-            startActivity(intent)
+            startActivity(i)
             finish()
         }
 

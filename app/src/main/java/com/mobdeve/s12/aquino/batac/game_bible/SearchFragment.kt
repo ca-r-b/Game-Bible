@@ -25,7 +25,7 @@ class SearchFragment : Fragment() {
         binding = FragmentSearchBinding.inflate(layoutInflater)
 
 //      TODO: Setup Recycler View
-        gameList = DataHelper.loadData()
+        gameList = DataHelper.loadSampleData1()
 
 //      Default Adapter
         adapter = HomeAdapter(gameList)

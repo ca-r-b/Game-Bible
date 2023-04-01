@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
         val layoutManager2 = LinearLayoutManager(context)
 
 //      TODO Setup 1st RecyclerView (All Games)
-        gameList1 = DataHelper.searchSection("Featured", DataHelper.loadData())
+        gameList1 = DataHelper.searchSection("Featured", DataHelper.loadSampleData1())
 
         adapter1 = HomeAdapter(gameList1)
 
@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
 //      TODO Setup 2nd RecyclerView (Community Recommendations)
 
 //      TODO Logic for changing arraylist
-        gameList2 = DataHelper.searchSection("Top Selling", DataHelper.loadData())
+        gameList2 = DataHelper.searchSection("Top Selling", DataHelper.loadSampleData1())
 
         adapter2 = HomeAdapter(gameList2)
 

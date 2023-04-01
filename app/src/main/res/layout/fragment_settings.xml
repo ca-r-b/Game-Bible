@@ -151,52 +151,6 @@
         <!--    TODO ............................ DIVIDER   -->
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/setFBMenu"
-            android:padding="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/setFBMenuIv1"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/setFBMenuTv"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_share" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/setFBMenuTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Connect Account to Facebook"
-                android:textColor="@color/white"
-                android:textSize="17sp"
-                android:fontFamily="@font/mont_regular"
-                android:layout_marginStart="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/setFBMenuIv1"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_arrow_forward_ios" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:background="#4AFFFFFF"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-
-        <!--    TODO ............................ DIVIDER   -->
-
-        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/setLogoutMenu"
             android:padding="20dp"
             android:layout_width="match_parent"

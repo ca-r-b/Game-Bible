@@ -29,11 +29,11 @@
         app:layout_constraintTop_toBottomOf="@+id/loginLogoIv">
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/loginUsernameEt"
+            android:id="@+id/loginEmailEt"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:background="@drawable/cstm_et_field_background"
-            android:hint="Username"
+            android:hint="Email Address"
             android:padding="10dp"
             android:textColor="@color/gb_color1"
             android:fontFamily="@font/mont_regular"/>

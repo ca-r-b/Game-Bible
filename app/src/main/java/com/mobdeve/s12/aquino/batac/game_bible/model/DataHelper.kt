@@ -9,23 +9,7 @@ import com.mobdeve.s12.aquino.batac.game_bible.R
 
 class DataHelper {
     companion object {
-        fun loadUserAccounts(): ArrayList<User>{
-            val data = ArrayList<User>()
-
-            data.add(
-                User(
-                    "testing",
-                    "testing",
-                    "Wow I look cool",
-                    R.drawable.sample_1,
-//                    ArrayList<Game>()
-                )
-            )
-
-            return data
-        }
-
-        fun loadData(): ArrayList<Game> {
+        fun loadSampleData1(): ArrayList<Game> {
             val data = ArrayList<Game>()
 
             data.add(
@@ -129,6 +113,58 @@ class DataHelper {
             return data
         }
 
+        fun loadSampleData2(): ArrayList<Review>{
+            val data = ArrayList<Review>()
+
+            data.add(
+                Review(
+                    "jack123",
+                    "Love this game",
+                    "Kingdom Hearts 3",
+                    true
+                )
+            )
+
+            data.add(
+                Review(
+                    "gr0wlerz",
+                    "I ALWAYS LOSE BECAUSE OF LAG AUGH",
+                    "Tekken 7",
+                    false
+                )
+            )
+
+            return data
+        }
+
+        fun loadSampleData3(): ArrayList<User>{
+            val data = ArrayList<User>()
+
+            data.add(
+                User(
+                    1,
+                    "jackjak@gmail.com",
+                    "jack123",
+                    "t7Jack",
+                    "im jack hi hello",
+                    R.drawable.sample_default
+                )
+            )
+
+            data.add(
+                User(
+                    2,
+                    "growler@gmail.com",
+                    "gr0wlerz",
+                    "21gro3123",
+                    "GROOOOOOOWLLL",
+                    R.drawable.sample_default
+                )
+            )
+
+            return data
+        }
+
         fun searchSection(section: String, gameList: ArrayList<Game>): ArrayList<Game>{
             var newData = ArrayList<Game>()
 
@@ -178,6 +214,46 @@ class DataHelper {
             for(game in currentData){
                 if(game.genre == input){
                     data.add(game)
+                }
+            }
+
+            return data
+        }
+
+//      TODO: Fetch Data for Comments - Current code is subject to change after DB application
+        fun searchReviews(title: String, currentData: ArrayList<Review>): ArrayList<Review>{
+            var data = ArrayList<Review>()
+
+            for(review in currentData){
+                if(review.gameTitle == title){
+                    data.add(review)
+                }
+            }
+
+            return data
+        }
+
+//      TODO: Fetch number of recos - Current code is subject to change after DB application
+        fun getRecos(currentData: ArrayList<Review>): Int{
+            var data = 0
+
+            for(reco in currentData){
+                if(reco.doesRecommend == true){
+                    data++
+                }
+            }
+
+            return data
+        }
+
+//       TODO: For visiting profile - Current code is subject to change after DB application
+        fun searchUser(username: String, currentData: ArrayList<User>): User?{
+            var data: User? = null
+
+            for(user in currentData){
+                if(user.username == username){
+                    data = user
+                    break
                 }
             }
 

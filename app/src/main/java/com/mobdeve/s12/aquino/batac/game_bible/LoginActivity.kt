@@ -4,11 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,24 +19,34 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        firebaseAuth = FirebaseAuth.getInstance()
+
 //        Hide action bar
         supportActionBar?.hide()
 
+//        TODO: No SQLite Implementation (For Beta Testing)
         binding.loginLogBtn.setOnClickListener(View.OnClickListener {
-            var intent = Intent(this@LoginActivity, MainActivity::class.java)
 
-            /*
-                TODO:
-                    1. Add logic for checking inputted credentials
-                        a. Move to next activity if PASS
-                            i. Search for credentials in database (check if VALID)
-                            ii. See if username and password exist / credentials match
-                            iii. Pass username to next activity
-                        b. Else (if FAIL), show TOAST / SNACK BAR
-            */
+            val email = binding.loginEmailEt.text.toString()
+            val pass = binding.loginPassEt.text.toString()
 
-            startActivity(intent)
-            finish()
+            if(email.isNotEmpty() && pass.isNotEmpty()){
+//                TODO: check if user exists
+                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
+                    if(it.isSuccessful){
+                        var intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        Toast.makeText(this, "Logged in successfully!", Toast.LENGTH_SHORT).show()
+
+                        startActivity(intent)
+                        finish()
+                    }else{
+                        Toast.makeText(this, "Invalid Credentials! Please double check your inputs.", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }else{
+                Toast.makeText(this, "Kindly double check your inputs.", Toast.LENGTH_SHORT).show()
+            }
+
         })
 
         binding.loginRegBtn.setOnClickListener(View.OnClickListener {
@@ -48,5 +61,14 @@ class LoginActivity : AppCompatActivity() {
 
             startActivity(intent)
         })
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val firebaseUser = firebaseAuth.currentUser
+        if(firebaseUser != null){
+            var intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -1,6 +1,8 @@
 package com.mobdeve.s12.aquino.batac.game_bible.model
 
 class User(
+    val id: Int,
+    val email: String,
     val username: String,
     var password: String,
     var bio: String = "Hello, there!",

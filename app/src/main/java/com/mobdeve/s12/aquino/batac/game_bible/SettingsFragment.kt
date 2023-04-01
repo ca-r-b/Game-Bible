@@ -6,17 +6,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.firebase.auth.FirebaseAuth
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
 
     private lateinit var binding: FragmentSettingsBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSettingsBinding.inflate(layoutInflater)
+
+        firebaseAuth = FirebaseAuth.getInstance()
 
         binding.setProfileMenu.setOnClickListener {
             var intent = Intent(it.context, EditProfileActivity::class.java)
@@ -33,12 +37,9 @@ class SettingsFragment : Fragment() {
             startActivity(intent)
         }
 
-        binding.setFBMenu.setOnClickListener {
-            var intent = Intent(it.context, FacebookActivity::class.java)
-            startActivity(intent)
-        }
-
         binding.setLogoutMenu.setOnClickListener {
+            firebaseAuth.signOut()
+
             var intent = Intent(it.context, LoginActivity::class.java)
             startActivity(intent)
             activity?.finishAffinity()

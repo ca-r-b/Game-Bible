@@ -14,13 +14,16 @@
         android:theme="@style/Theme.Game_Bible"
         tools:targetApi="31">
         <activity
+            android:name=".VisitProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".BookmarkActivity"
             android:exported="false"
-            android:label="Saved Games"/>
+            android:label="Saved Games" />
         <activity
             android:name=".FacebookActivity"
             android:exported="false"
-            android:label="Connect to FB"/>
+            android:label="Connect to FB" />
         <activity
             android:name=".ChangePassActivity"
             android:exported="false"

@@ -11,26 +11,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/regLogoIv"
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            android:layout_marginTop="80dp"
-            app:srcCompat="@drawable/my_logo_with_label"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/regFieldDiv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
             android:orientation="vertical"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/regLogoIv">
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="30dp"
+                android:text="SIGN UP"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:fontFamily="@font/oswald_bold" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/regEmailEt"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:background="@drawable/cstm_et_field_background"
+                android:hint="Email Address"
+                android:padding="10dp"
+                android:textColor="@color/gb_color1"
+                android:fontFamily="@font/mont_regular"/>
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/regUsernameEt"
@@ -38,6 +47,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/cstm_et_field_background"
                 android:hint="Username"
+                android:layout_marginTop="25dp"
                 android:padding="10dp"
                 android:textColor="@color/gb_color1"
                 android:fontFamily="@font/mont_regular"/>
@@ -75,6 +85,23 @@
                 android:text="CREATE ACCOUNT"
                 android:textColor="@color/white"
                 android:fontFamily="@font/mont_bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Note: Username must have at least 5 characters"
+                android:textColor="#A4FFFFFF"
+                android:fontFamily="@font/mont_regular"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="and password must have at least 8 characters"
+                android:textColor="#A4FFFFFF"
+                android:fontFamily="@font/mont_regular"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

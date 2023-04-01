@@ -97,6 +97,7 @@ class GameDetailsActivity : AppCompatActivity() {
 //      Viewing Community Reviews
         binding.detViewBtn.setOnClickListener{
             var intent = Intent(this, ViewReviewActivity::class.java)
+            intent.putExtra("title", binding.detTitleTv.text.toString())
 
             startActivity(intent)
         }
