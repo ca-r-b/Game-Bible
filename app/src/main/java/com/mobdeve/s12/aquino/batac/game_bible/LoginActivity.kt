@@ -24,45 +24,36 @@ class LoginActivity : AppCompatActivity() {
 //        Hide action bar
         supportActionBar?.hide()
 
-//        TODO: No SQLite Implementation (For Beta Testing)
-        binding.loginLogBtn.setOnClickListener(View.OnClickListener {
-
+        binding.loginLogBtn.setOnClickListener{
             val email = binding.loginEmailEt.text.toString()
             val pass = binding.loginPassEt.text.toString()
 
-            if(email.isNotEmpty() && pass.isNotEmpty()){
-//                TODO: check if user exists
-                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
-                    if(it.isSuccessful){
-                        var intent = Intent(this@LoginActivity, MainActivity::class.java)
-                        Toast.makeText(this, "Logged in successfully!", Toast.LENGTH_SHORT).show()
-
-                        startActivity(intent)
-                        finish()
-                    }else{
-                        Toast.makeText(this, "Invalid Credentials! Please double check your inputs.", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }else{
-                Toast.makeText(this, "Kindly double check your inputs.", Toast.LENGTH_SHORT).show()
-            }
-
-        })
+            validateLogin(email, pass)
+        }
 
         binding.loginRegBtn.setOnClickListener(View.OnClickListener {
-            var intent = Intent(this@LoginActivity, RegisterActivity::class.java)
-
-            /*
-                TODO:
-                    1. Add logic for checking inputted credentials
-                        a. Display TOAST / SNACK BAR [*VALID*] if PASS
-                        b. Else (if FAIL), show TOAST / SNACK BAR [*INVALID*]
-            */
-
+            var intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         })
     }
 
+    private fun validateLogin(email: String, pass: String){
+        if(email.isNotEmpty() && pass.isNotEmpty()){
+            firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
+                if(it.isSuccessful){
+                    var intent = Intent(this, MainActivity::class.java)
+                    Toast.makeText(this, "Logged in successfully!", Toast.LENGTH_SHORT).show()
+
+                    startActivity(intent)
+                    finish()
+                }else{
+                    Toast.makeText(this, "Invalid Credentials! Please double check your inputs.", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }else{
+            Toast.makeText(this, "Kindly double check your inputs.", Toast.LENGTH_SHORT).show()
+        }
+    }
     override fun onStart() {
         super.onStart()
         val firebaseUser = firebaseAuth.currentUser

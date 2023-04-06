@@ -1,18 +1,13 @@
 package com.mobdeve.s12.aquino.batac.game_bible.model
 
-class Game(
-    val title: String,
-    val img: Int, //TODO: Change to String (maybe after implementation of Database)
-    val desc: String,
-    val genre: String,
-    val releaseDate: String,
-    val developer: String,
-    val publisher: String,
-    val trailer: String,
-    var section: String,
-
-//    val reviews: ArrayList<Review>
-
-//    val stats: Float = 0F
-//  TODO: LIKES divided by ('/') REVIEWS
+data class Game(
+    val title: String? = null,
+    val img: String? = null,
+    val desc: String? = null,
+    val genre: String? = null,
+    val releaseDate: String? = null,
+    val developer: String? = null,
+    val publisher: String? = null,
+    val trailer: String? = null,
+    var section: String? = null,
 )

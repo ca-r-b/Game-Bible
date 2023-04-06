@@ -1,12 +1,11 @@
 package com.mobdeve.s12.aquino.batac.game_bible.model
 
-class User(
-    val id: Int,
-    val email: String,
-    val username: String,
-    var password: String,
-    var bio: String = "Hello, there!",
+data class User(
+    val uid: String? = null,
+    val email: String? = null,
+    val username: String? = null,
+    var password: String? = null,
+    var bio: String? = null,
 //    TODO: Setup default profile picture
-    var img: Int,
-//    var saved: ArrayList<Game>
+    var img: String? = null,
 )

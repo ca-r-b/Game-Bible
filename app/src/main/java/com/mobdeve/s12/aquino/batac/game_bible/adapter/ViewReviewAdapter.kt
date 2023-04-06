@@ -1,10 +1,11 @@
-package com.mobdeve.s12.aquino.batac.game_bible
+package com.mobdeve.s12.aquino.batac.game_bible.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.mobdeve.s12.aquino.batac.game_bible.databinding.RowItemCatalogBinding
+import com.mobdeve.s12.aquino.batac.game_bible.R
+import com.mobdeve.s12.aquino.batac.game_bible.VisitProfileActivity
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.RowItemReviewBinding
 import com.mobdeve.s12.aquino.batac.game_bible.model.Review
 
@@ -40,7 +41,7 @@ class ViewReviewAdapter (val data: ArrayList<Review>): RecyclerView.Adapter<View
             itemReviewBinding.reviewUserIv.setImageResource(R.drawable.sample_default)
 
 //          TODO: Code is subject to change after implementation of Firebase
-            if(review.doesRecommend)
+            if(review.doesRecommend == 1)
                 itemReviewBinding.reviewRecomTv.text = "RECOMMENDED"
             else
                 itemReviewBinding.reviewRecomTv.text = "NOT RECOMMENDED"

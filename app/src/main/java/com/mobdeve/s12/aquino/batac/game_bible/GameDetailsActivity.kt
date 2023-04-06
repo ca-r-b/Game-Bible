@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.view.MenuItem
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.ActivityGameDetailsBinding
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
@@ -31,15 +32,33 @@ class GameDetailsActivity : AppCompatActivity() {
 //        TODO: Replace details accordingly (With SQLite)
 //        TODO: Add Reviews + Stats LATER
         var intent = intent
+
         binding.detTitleTv.text = intent.getStringExtra("title")
         binding.detDescTv.text = intent.getStringExtra("desc")
         binding.detGenreTv.text = "Genre: " + intent.getStringExtra("genre")
         binding.detDateTv.text = "Release Date: " + intent.getStringExtra("releaseDate")
         binding.detDevTv.text = "Developer: " + intent.getStringExtra("developer")
         binding.detPubTv.text = "Publisher: " + intent.getStringExtra("publisher")
-        binding.detThumbIv.setImageResource(intent.getIntExtra("img", 0))
+        Glide.with(this).load(intent.getStringExtra("img")).into(binding.detThumbIv)
 
-//      Setup Text to Speech
+//      Setup - Text-To-Speech API
+        initTTS()
+
+//      Setup - YouTube API
+//      Setup Link
+        videoID = intent.getStringExtra("trailer").toString()
+        initYT(videoID)
+
+//      Viewing Community Reviews
+        binding.detViewBtn.setOnClickListener{
+            var intent = Intent(this, ViewReviewActivity::class.java)
+            intent.putExtra("title", binding.detTitleTv.text.toString())
+
+            startActivity(intent)
+        }
+    }
+
+    private fun initTTS(){
         tts = TextToSpeech(applicationContext, TextToSpeech.OnInitListener {
             if(it == TextToSpeech.SUCCESS){
                 tts.setLanguage(Locale.US)
@@ -55,10 +74,8 @@ class GameDetailsActivity : AppCompatActivity() {
                 binding.detSpeechIv.setImageResource(R.drawable.ic_volume_up)
             }
         }
-
-//      YouTube API Setup
-//      Setup Link
-        videoID = intent.getStringExtra("trailer").toString()
+    }
+    private fun initYT(videoID: String){
         lifecycle.addObserver(binding.detYTPlayer)
 
         binding.detYTPlayer.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
@@ -93,14 +110,6 @@ class GameDetailsActivity : AppCompatActivity() {
                 super.onError(youTubePlayer, error)
             }
         })
-
-//      Viewing Community Reviews
-        binding.detViewBtn.setOnClickListener{
-            var intent = Intent(this, ViewReviewActivity::class.java)
-            intent.putExtra("title", binding.detTitleTv.text.toString())
-
-            startActivity(intent)
-        }
     }
 
     //  Finish activity after clicking back button on ToolBar

@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.mobdeve.s12.aquino.batac.game_bible.adapter.ViewReviewAdapter
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.ActivityViewReviewBinding
 import com.mobdeve.s12.aquino.batac.game_bible.model.DataHelper
 import com.mobdeve.s12.aquino.batac.game_bible.model.Review
@@ -23,7 +23,9 @@ class ViewReviewActivity : AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this)
         val title = intent.getStringExtra("title").toString()
-        reviews = DataHelper.searchReviews(title, DataHelper.loadSampleData2())
+
+//        ToDo: Change passed data
+        reviews = DataHelper.searchReviews(title, ArrayList<Review>())
 
 //        TODO: Setup DATASET
         adapter = ViewReviewAdapter(reviews)
@@ -32,7 +34,7 @@ class ViewReviewActivity : AppCompatActivity() {
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        binding.viewRevStatsTv.text = DataHelper.getRecos(reviews).toString() + " out of " + reviews.size + " user reviews recommend this game"
+        binding.viewRevStatsTv.text = "TODO REPLACE" + " out of " + "TODO REPLACE" + " user reviews recommend this game"
 
         binding.viewRevFAB.setOnClickListener {
             var intent = Intent(this, AddReviewActivity::class.java)

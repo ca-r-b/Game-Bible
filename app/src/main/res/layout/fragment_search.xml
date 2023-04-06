@@ -5,48 +5,57 @@
     android:background="@color/gb_color1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchFragment">
+    tools:context=".fragment.SearchFragment">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchBarSv"
-                android:layout_width="220dp"
-                android:layout_height="50dp"
-                app:queryHint="Search title..."
-                app:iconifiedByDefault="false"
-                android:background="@color/white"
-                />
-
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/searchFilterSp"
-                android:layout_width="130dp"
-                android:layout_height="50dp"
-                android:background="@color/white"
-                android:entries="@array/filter"
-                android:contentDescription="filter"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:spinnerMode="dropdown"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchBarSv"
+                    android:layout_width="220dp"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    app:iconifiedByDefault="false"
+                    app:queryHint="Search title..." />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/searchFilterSp"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/white"
+                    android:contentDescription="filter"
+                    android:entries="@array/filter"
+                    android:spinnerMode="dropdown" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/searchRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                tools:listitem="@layout/row_item_catalog" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/searchRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/row_item_catalog"
-            android:layout_marginBottom="60dp"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

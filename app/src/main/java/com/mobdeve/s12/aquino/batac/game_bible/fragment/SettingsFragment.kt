@@ -1,4 +1,4 @@
-package com.mobdeve.s12.aquino.batac.game_bible
+package com.mobdeve.s12.aquino.batac.game_bible.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.firebase.auth.FirebaseAuth
+import com.mobdeve.s12.aquino.batac.game_bible.BookmarkActivity
+import com.mobdeve.s12.aquino.batac.game_bible.ChangePassActivity
+import com.mobdeve.s12.aquino.batac.game_bible.EditProfileActivity
+import com.mobdeve.s12.aquino.batac.game_bible.LoginActivity
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {

@@ -1,14 +1,19 @@
-package com.mobdeve.s12.aquino.batac.game_bible
+package com.mobdeve.s12.aquino.batac.game_bible.adapter
 
+import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.mobdeve.s12.aquino.batac.game_bible.GameDetailsActivity
+import com.mobdeve.s12.aquino.batac.game_bible.R
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.RowItemCatalogBinding
 import com.mobdeve.s12.aquino.batac.game_bible.model.Game
 
-class HomeAdapter(val data: ArrayList<Game>): RecyclerView.Adapter<HomeAdapter.HomeVH>() {
+class HomeAdapter(val context: Context?, val data: ArrayList<Game>): RecyclerView.Adapter<HomeAdapter.HomeVH>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeVH {
         val itemBinding = RowItemCatalogBinding.inflate(
@@ -22,6 +27,9 @@ class HomeAdapter(val data: ArrayList<Game>): RecyclerView.Adapter<HomeAdapter.H
 
     override fun onBindViewHolder(holder: HomeVH, position: Int) {
         holder.bindData(data[position])
+        if (context != null) {
+            Glide.with(context).load(data[position].img).into(holder.itemHomeBinding.homePicIv)
+        }
 
         /* TODO
              1. See if ITEM is in BOOKMARKS / isBookmarked
@@ -61,8 +69,10 @@ class HomeAdapter(val data: ArrayList<Game>): RecyclerView.Adapter<HomeAdapter.H
     inner class HomeVH(val itemHomeBinding: RowItemCatalogBinding): RecyclerView.ViewHolder(itemHomeBinding.root){
         fun bindData(game: Game){
             itemHomeBinding.homeTitleTv.text = game.title
+            Log.d("GAME TITLE", game.title.toString())
             itemHomeBinding.homeGenreTv.text = game.genre
-            itemHomeBinding.homePicIv.setImageResource(game.img)
+            Log.d("GAME GENRE", game.genre.toString())
+//            itemHomeBinding.homePicIv.setImageResource(R.drawable.sample_default)
 
 //            TODO: Replace Image Resource of bookmark if part of saved
 //            if(!game.test){
