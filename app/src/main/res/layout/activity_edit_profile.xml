@@ -40,7 +40,7 @@
             android:id="@+id/editProfileImgBtn"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:background="@drawable/cstm_btn_field_background"
+            android:background="@drawable/cstm_btn_other_background"
             android:fontFamily="@font/mont_bold"
             android:text="UPLOAD IMAGE"
             android:textColor="@color/white"
@@ -69,11 +69,14 @@
             android:id="@+id/editBioEt"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/mont_regular"
             android:text="Loading..."
             android:textColor="#DFDFDF"
             android:textSize="15sp"
             android:gravity="top"
+            android:padding="10dp"
+            android:background="#46FFFFFF"
             />
 
         <View

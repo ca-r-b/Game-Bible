@@ -6,6 +6,5 @@ data class User(
     val username: String? = null,
     var password: String? = null,
     var bio: String? = null,
-//    TODO: Setup default profile picture
     var img: String? = null,
 )

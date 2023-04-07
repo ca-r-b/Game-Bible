@@ -24,7 +24,6 @@ class RegisterActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         dbReference = FirebaseDatabase.getInstance("https://game-bible-fecc0-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
-        Log.d("DB REFERENCE", dbReference.toString())
 
         // Hide action bar
         supportActionBar?.hide()

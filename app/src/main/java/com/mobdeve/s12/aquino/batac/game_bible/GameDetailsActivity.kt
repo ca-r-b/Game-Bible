@@ -31,15 +31,15 @@ class GameDetailsActivity : AppCompatActivity() {
 
 //        TODO: Replace details accordingly (With SQLite)
 //        TODO: Add Reviews + Stats LATER
-        var intent = intent
+        var gameDetails = intent
 
-        binding.detTitleTv.text = intent.getStringExtra("title")
-        binding.detDescTv.text = intent.getStringExtra("desc")
-        binding.detGenreTv.text = "Genre: " + intent.getStringExtra("genre")
-        binding.detDateTv.text = "Release Date: " + intent.getStringExtra("releaseDate")
-        binding.detDevTv.text = "Developer: " + intent.getStringExtra("developer")
-        binding.detPubTv.text = "Publisher: " + intent.getStringExtra("publisher")
-        Glide.with(this).load(intent.getStringExtra("img")).into(binding.detThumbIv)
+        binding.detTitleTv.text = gameDetails.getStringExtra("title")
+        binding.detDescTv.text = gameDetails.getStringExtra("desc")
+        binding.detGenreTv.text = "Genre: " + gameDetails.getStringExtra("genre")
+        binding.detDateTv.text = "Release Date: " + gameDetails.getStringExtra("releaseDate")
+        binding.detDevTv.text = "Developer: " + gameDetails.getStringExtra("developer")
+        binding.detPubTv.text = "Publisher: " + gameDetails.getStringExtra("publisher")
+        Glide.with(this).load(gameDetails.getStringExtra("img")).into(binding.detThumbIv)
 
 //      Setup - Text-To-Speech API
         initTTS()
@@ -52,7 +52,8 @@ class GameDetailsActivity : AppCompatActivity() {
 //      Viewing Community Reviews
         binding.detViewBtn.setOnClickListener{
             var intent = Intent(this, ViewReviewActivity::class.java)
-            intent.putExtra("title", binding.detTitleTv.text.toString())
+            var gid = gameDetails.getIntExtra("gid", 0)
+            intent.putExtra("gid", gid)
 
             startActivity(intent)
         }

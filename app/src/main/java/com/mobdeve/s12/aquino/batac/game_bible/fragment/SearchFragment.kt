@@ -1,7 +1,6 @@
 package com.mobdeve.s12.aquino.batac.game_bible.fragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
 import com.mobdeve.s12.aquino.batac.game_bible.adapter.HomeAdapter
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.FragmentSearchBinding
-import com.mobdeve.s12.aquino.batac.game_bible.model.DataHelper
 import com.mobdeve.s12.aquino.batac.game_bible.model.Game
 
 class SearchFragment : Fragment() {
@@ -34,14 +32,14 @@ class SearchFragment : Fragment() {
 
         dbReference = FirebaseDatabase.getInstance("https://game-bible-fecc0-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Games")
 
-//      Recycler view setup
+//      Setup - Recycler view
 //      ** Catalog will be loaded automatically with the given input fields **
         gameList = ArrayList()
         val layoutManager = LinearLayoutManager(context)
         binding.searchRecyclerView.layoutManager = layoutManager
         binding.searchRecyclerView.setHasFixedSize(true)
 
-//      TODO: Setup Searching - Current code is subject to change after DB application
+//      Setup - Input fields
         binding.searchBarSv.setOnQueryTextListener(object: OnQueryTextListener{
             override fun onQueryTextSubmit(input: String?): Boolean {
                 if(input != null){
@@ -62,7 +60,6 @@ class SearchFragment : Fragment() {
             }
         })
 
-//      TODO: Setup Filter (Spinner) - Current code is subject to change after DB application
         binding.searchFilterSp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 // Leave function blank as there is always an option selected

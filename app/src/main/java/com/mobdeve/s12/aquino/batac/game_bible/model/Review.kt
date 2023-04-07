@@ -1,9 +1,9 @@
 package com.mobdeve.s12.aquino.batac.game_bible.model
 
-class Review(
+data class Review(
+    val rid: String? = null,
+    val gid: Int? = null,
     val uid: String? = null,
-    val username: String? = null,
     val comment: String? = null,
-    val gameTitle: String? = null,
     val doesRecommend: Int? = null
 )

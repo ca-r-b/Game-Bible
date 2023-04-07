@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -19,6 +20,7 @@ class ProfileFragment : Fragment() {
     private lateinit var dbReference: DatabaseReference
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var uid: String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,7 +51,9 @@ class ProfileFragment : Fragment() {
 
                     if(img.toString() == "New"){
                         binding.profileImgIv.setImageResource(R.drawable.sample_default)
-                    } //TODO Replace image with url
+                    }else{
+                        Glide.with(this).load(img).into(binding.profileImgIv)
+                    }
                 }else{
                     Toast.makeText(context, "Error: User does not exist!", Toast.LENGTH_SHORT).show()
                 }

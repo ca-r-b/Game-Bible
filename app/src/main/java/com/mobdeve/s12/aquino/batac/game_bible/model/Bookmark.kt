@@ -1,6 +1,7 @@
 package com.mobdeve.s12.aquino.batac.game_bible.model
 
-class Bookmarked (
+data class Bookmark(
+    val bid: String? = null,
     val uid: String? = null,
-    val gameTitle: String? = null
+    val gid: Int? = null
 )

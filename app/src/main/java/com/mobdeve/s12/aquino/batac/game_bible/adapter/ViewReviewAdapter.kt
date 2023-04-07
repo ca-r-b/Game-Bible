@@ -1,15 +1,24 @@
 package com.mobdeve.s12.aquino.batac.game_bible.adapter
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.mobdeve.s12.aquino.batac.game_bible.R
 import com.mobdeve.s12.aquino.batac.game_bible.VisitProfileActivity
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.RowItemReviewBinding
 import com.mobdeve.s12.aquino.batac.game_bible.model.Review
 
-class ViewReviewAdapter (val data: ArrayList<Review>): RecyclerView.Adapter<ViewReviewAdapter.ViewReviewVH>() {
+class ViewReviewAdapter (val context: Context?, val data: ArrayList<Review>): RecyclerView.Adapter<ViewReviewAdapter.ViewReviewVH>() {
+
+    private var dbUserRef = FirebaseDatabase.getInstance("https://game-bible-fecc0-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewReviewVH {
         val itemBinding = RowItemReviewBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
@@ -23,28 +32,42 @@ class ViewReviewAdapter (val data: ArrayList<Review>): RecyclerView.Adapter<View
     override fun onBindViewHolder(holder: ViewReviewVH, position: Int) {
         holder.bindData(data[position])
 
-//      TODO: Code is subject to change after Firebase implementation
+//        When clicked, REDIRECT to user
         holder.itemReviewBinding.reviewUserIv.setOnClickListener{
             var intent = Intent(it.context, VisitProfileActivity::class.java)
-            intent.putExtra("username", data[position].username)
+            intent.putExtra("uid", data[position].uid)
 
-            it.context.startActivity(intent)
+            context?.startActivity(intent)
         }
     }
 
     inner class ViewReviewVH(val itemReviewBinding: RowItemReviewBinding): RecyclerView.ViewHolder(itemReviewBinding.root){
         fun bindData(review: Review){
-            itemReviewBinding.reviewUserTv.text = review.username
-            itemReviewBinding.reviewCommentTv.text = review.comment
+            dbUserRef.child(review.uid.toString()).get()
+                .addOnSuccessListener {
+                    if(it.exists()){
+                        val username = it.child("username").value
+                        val img = it.child("img").value
 
-//          TODO: Set image according to user (USE FIREBASE)
-            itemReviewBinding.reviewUserIv.setImageResource(R.drawable.sample_default)
+                        itemReviewBinding.reviewUserTv.text = username.toString()
+                        itemReviewBinding.reviewCommentTv.text = review.comment
 
-//          TODO: Code is subject to change after implementation of Firebase
-            if(review.doesRecommend == 1)
-                itemReviewBinding.reviewRecomTv.text = "RECOMMENDED"
-            else
-                itemReviewBinding.reviewRecomTv.text = "NOT RECOMMENDED"
+                        if(review.doesRecommend == 1)
+                            itemReviewBinding.reviewRecomTv.text = "RECOMMENDED"
+                        else
+                            itemReviewBinding.reviewRecomTv.text = "NOT RECOMMENDED"
+
+                        if(img.toString() == "New"){
+                            itemReviewBinding.reviewUserIv.setImageResource(R.drawable.sample_default)
+                        }else{
+                            Glide.with(context!!).load(img).into(itemReviewBinding.reviewUserIv)
+                        }
+                    }else{
+                        Toast.makeText(context, "Error: User does not exist!", Toast.LENGTH_SHORT).show()
+                    }
+                }.addOnFailureListener {
+                    Toast.makeText(context, "There could be an error.", Toast.LENGTH_SHORT).show()
+                }
         }
 
     }

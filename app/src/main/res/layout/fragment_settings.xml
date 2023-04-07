@@ -77,7 +77,7 @@
                 android:id="@+id/setSavedMenuTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Saved Games"
+                android:text="Bookmarks"
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 android:fontFamily="@font/mont_regular"

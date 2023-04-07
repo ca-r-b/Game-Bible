@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.ActivityLoginBinding
+import com.mobdeve.s12.aquino.batac.game_bible.model.Game
+import com.mobdeve.s12.aquino.batac.game_bible.model.Review
 
 class LoginActivity : AppCompatActivity() {
 
@@ -54,6 +57,7 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "Kindly double check your inputs.", Toast.LENGTH_SHORT).show()
         }
     }
+
     override fun onStart() {
         super.onStart()
         val firebaseUser = firebaseAuth.currentUser
