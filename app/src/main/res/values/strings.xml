@@ -12,4 +12,6 @@
         <item>Simulation</item>
     </string-array>
 
+    <string name="facebook_app_id">947605742934111</string>
+    <string name="facebook_client_token">fc19a092c2f79f4788c2eb684a11cf77</string>
 </resources>

@@ -87,21 +87,14 @@
                 android:fontFamily="@font/mont_bold"/>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="Note: Username must have at least 5 characters"
+                android:text="NOTE: Your username cannot be changed after registering. Also, your username and password must have at least 5 and 8 characters respectively."
                 android:textColor="#A4FFFFFF"
                 android:fontFamily="@font/mont_regular"/>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="and password must have at least 8 characters"
-                android:textColor="#A4FFFFFF"
-                android:fontFamily="@font/mont_regular"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -109,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">

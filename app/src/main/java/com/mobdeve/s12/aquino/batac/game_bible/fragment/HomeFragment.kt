@@ -47,9 +47,9 @@ class HomeFragment : Fragment() {
                 if(snapshot.exists()){
                     for(game in snapshot.children){
                         val gameToAdd = game.getValue(Game::class.java)
-                        if(gameToAdd?.section == "Featured"){
+                        if(gameToAdd?.section == "Modern Classics"){
                             gameList1.add(gameToAdd)
-                        }else{
+                        }else if (gameToAdd?.releaseDate?.takeLast(4) == "2022"){
                             gameList2.add(gameToAdd!!)
                         }
                     }

@@ -66,14 +66,15 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/profileBioTv"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="15dp"
+                android:background="#1D6EC5FF"
                 android:text="Loading..."
                 android:fontFamily="@font/mont_light"
                 android:textColor="@color/white"
-                android:justificationMode="inter_word"
-                android:textSize="15sp"/>
+                android:textSize="15sp"
+                android:padding="10dp"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

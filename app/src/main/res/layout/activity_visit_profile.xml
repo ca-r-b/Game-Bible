@@ -16,7 +16,7 @@
         app:civ_border_color="@color/white"
         app:civ_border_width="3dp"
         android:elevation="10dp"
-        android:src="@drawable/sample_1"
+        android:src="@drawable/sample_default"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Sora_kun"
+        android:text="Loading..."
         android:fontFamily="@font/mont_bold"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -61,14 +61,15 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/visitBioTv"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet accumsan massa, non vestibulum lectus vestibulum ut. Curabitur orci urna, vehicula ut ornare a, dapibus quis eros. Integer lorem urna, varius et ex a, vehicula posuere sem. Duis vulputate sapien quis diam ultricies semper. In hac habitasse platea dictumst. Morbi tortor sapien, congue id consectetur ac, faucibus at lectus. Duis elementum porta nisl sit amet porttitor. Integer tincidunt nulla justo, in dignissim lorem hendrerit rhoncus. Nunc pretium porttitor enim, id tincidunt ante ornare ut. Vivamus a massa elit. Cras enim ipsum, pellentesque non eleifend at, volutpat non dui. Suspendisse eu metus non nulla auctor posuere a efficitur dui. Praesent id est id arcu convallis aliquet quis eget neque. Quisque urna nisi, tempus a elit euismod, maximus tristique dui. Integer quis commodo turpis, vitae finibus nisi. Phasellus nibh nisl, porta vel fermentum at, laoreet at dui."
+            android:background="#1D6EC5FF"
+            android:text="Loading..."
             android:fontFamily="@font/mont_light"
             android:textColor="@color/white"
-            android:justificationMode="inter_word"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:padding="10dp"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -1,18 +1,28 @@
 package com.mobdeve.s12.aquino.batac.game_bible
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.telecom.Call
+import android.util.Log
 import android.view.MenuItem
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
+import com.facebook.*
+import com.facebook.login.LoginManager
+import com.facebook.login.LoginResult
+import com.facebook.share.model.ShareHashtag
+import com.facebook.share.model.ShareLinkContent
+import com.facebook.share.widget.ShareDialog
 import com.mobdeve.s12.aquino.batac.game_bible.databinding.ActivityGameDetailsBinding
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
-import org.w3c.dom.Text
+import java.lang.Exception
 import java.util.*
 
 class GameDetailsActivity : AppCompatActivity() {
@@ -21,6 +31,10 @@ class GameDetailsActivity : AppCompatActivity() {
     private lateinit var videoID: String
     private lateinit var tts: TextToSpeech
 
+    private lateinit var gameDetails: Intent
+    private lateinit var loginPrompt: AlertDialog.Builder
+
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGameDetailsBinding.inflate(layoutInflater)
@@ -29,12 +43,12 @@ class GameDetailsActivity : AppCompatActivity() {
 //      Show tool bar back button
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-//        TODO: Replace details accordingly (With SQLite)
-//        TODO: Add Reviews + Stats LATER
-        var gameDetails = intent
+        gameDetails = intent
+
+        val desc = gameDetails.getStringExtra("desc")
 
         binding.detTitleTv.text = gameDetails.getStringExtra("title")
-        binding.detDescTv.text = gameDetails.getStringExtra("desc")
+        binding.detDescTv.text = desc
         binding.detGenreTv.text = "Genre: " + gameDetails.getStringExtra("genre")
         binding.detDateTv.text = "Release Date: " + gameDetails.getStringExtra("releaseDate")
         binding.detDevTv.text = "Developer: " + gameDetails.getStringExtra("developer")
@@ -47,15 +61,46 @@ class GameDetailsActivity : AppCompatActivity() {
 //      Setup - YouTube API
 //      Setup Link
         videoID = intent.getStringExtra("trailer").toString()
-        initYT(videoID)
+        initYT()
+
+//      Setup - Facebook API
+        initFBShare()
 
 //      Viewing Community Reviews
         binding.detViewBtn.setOnClickListener{
-            var intent = Intent(this, ViewReviewActivity::class.java)
-            var gid = gameDetails.getIntExtra("gid", 0)
+            val intent = Intent(this, ViewReviewActivity::class.java)
+            val gid = gameDetails.getIntExtra("gid", 0)
             intent.putExtra("gid", gid)
 
             startActivity(intent)
+        }
+    }
+
+    private fun initFBShare(){
+        binding.detShareIv.setOnClickListener{
+
+            loginPrompt = AlertDialog.Builder(this@GameDetailsActivity)
+
+            val hashTag = ShareHashtag.Builder().setHashtag("#GameBible_${gameDetails.getStringExtra("title")!!.replace(" ", "")}").build()
+            val linkContent = ShareLinkContent.Builder()
+                .setShareHashtag(hashTag)
+                .setQuote(binding.detTitleTv.text.toString())
+                .setContentUrl(Uri.parse("https://www.youtube.com/watch?v=$videoID"))
+                .build()
+
+            loginPrompt.setTitle("Share to Facebook")
+                .setMessage("Do you want to log out of your current Facebook account?\n\nNote: If you have yet to login an account but clicked NO, you will still be redirected to the login screen regardless.")
+                .setCancelable(true)
+                .setPositiveButton("Yes"){ dialogInterface, it ->
+                    LoginManager.getInstance().logOut()
+                    ShareDialog.show(this@GameDetailsActivity, linkContent)
+                    dialogInterface.dismiss()
+                }
+                .setNegativeButton("No"){ dialogInterface, it ->
+                    ShareDialog.show(this@GameDetailsActivity, linkContent)
+                    dialogInterface.dismiss()
+                }
+                .show()
         }
     }
 
@@ -76,7 +121,7 @@ class GameDetailsActivity : AppCompatActivity() {
             }
         }
     }
-    private fun initYT(videoID: String){
+    private fun initYT(){
         lifecycle.addObserver(binding.detYTPlayer)
 
         binding.detYTPlayer.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
