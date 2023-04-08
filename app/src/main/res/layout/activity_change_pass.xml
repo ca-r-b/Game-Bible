@@ -33,6 +33,7 @@
             android:background="@drawable/cstm_et_field_background"
             android:fontFamily="@font/mont_regular"
             android:hint="Old Password"
+            android:inputType="textPassword"
             android:padding="10dp"
             android:textColor="@color/gb_color1" />
 
@@ -53,6 +54,7 @@
             android:background="@drawable/cstm_et_field_background"
             android:fontFamily="@font/mont_regular"
             android:hint="New Password"
+            android:inputType="textPassword"
             android:padding="10dp"
             android:textColor="@color/gb_color1" />
 
@@ -73,6 +75,7 @@
             android:background="@drawable/cstm_et_field_background"
             android:fontFamily="@font/mont_regular"
             android:hint="Confirm New Password"
+            android:inputType="textPassword"
             android:padding="10dp"
             android:textColor="@color/gb_color1" />
 

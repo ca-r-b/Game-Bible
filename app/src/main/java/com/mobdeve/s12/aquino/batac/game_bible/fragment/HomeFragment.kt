@@ -57,6 +57,8 @@ class HomeFragment : Fragment() {
                     adapter2 = HomeAdapter(context, gameList2)
                     binding.homeRecyclerView.adapter = adapter1
                     binding.homeCommRecyclerView.adapter = adapter2
+                    binding.homeLoad1.visibility = View.GONE
+                    binding.homeLoad2.visibility = View.GONE
                 }
             }
 

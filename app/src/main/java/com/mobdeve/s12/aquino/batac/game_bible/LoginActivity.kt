@@ -22,10 +22,10 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        firebaseAuth = FirebaseAuth.getInstance()
-
-//        Hide action bar
+//      Hide action bar
         supportActionBar?.hide()
+
+        firebaseAuth = FirebaseAuth.getInstance()
 
         binding.loginLogBtn.setOnClickListener{
             val email = binding.loginEmailEt.text.toString()
