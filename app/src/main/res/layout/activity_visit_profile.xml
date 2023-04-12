@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:background="#1D6EC5FF"
+            android:background="@drawable/cstm_tv_background"
             android:text="Loading..."
             android:fontFamily="@font/mont_light"
             android:textColor="@color/white"

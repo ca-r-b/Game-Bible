@@ -38,6 +38,7 @@ class HomeAdapter(val context: Context?, val data: ArrayList<Game>): RecyclerVie
         holder.bindData(data[position])
         if (context != null) {
             Glide.with(context).load(data[position].img).into(holder.itemHomeBinding.homePicIv)
+            Log.d("IMG", data[position].img.toString())
         }
 
         holder.itemHomeBinding.homeContainerLayout.setOnClickListener{

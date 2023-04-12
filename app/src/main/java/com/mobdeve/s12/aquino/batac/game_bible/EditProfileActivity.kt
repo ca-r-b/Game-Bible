@@ -53,18 +53,15 @@ class EditProfileActivity : AppCompatActivity() {
 //      Show tool bar back button
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-//      TODO: Replace img and bio with current data
         firebaseAuth = FirebaseAuth.getInstance()
         uid = firebaseAuth.currentUser?.uid.toString()
 
         getUserDetails()
 
-//      TODO: Change Profile Picture Functionality
         binding.editProfileImgBtn.setOnClickListener {
             changeImage()
         }
 
-//       TODO: Save Profile Functionality
         binding.editSaveBtn.setOnClickListener {
             saveDetails()
         }
@@ -83,7 +80,6 @@ class EditProfileActivity : AppCompatActivity() {
                 }else{
                     Glide.with(this).load(img).into(binding.editProfileImgIv)
                 }
-//              TODO: Else when there exists photo of user
 
                 binding.editBioEt.setText(bio.toString())
             }else{
@@ -95,7 +91,7 @@ class EditProfileActivity : AppCompatActivity() {
     }
 
     private fun saveDetails(){
-        if(binding.editBioEt.text.toString().length in 5..100){
+        if(binding.editBioEt.text.toString().length in 5..200){
             val bio = binding.editBioEt.text.toString()
 
             dbReference.child(uid).get().addOnSuccessListener {
@@ -140,6 +136,8 @@ class EditProfileActivity : AppCompatActivity() {
             }.addOnFailureListener {
                 Toast.makeText(this, "There could be an error.", Toast.LENGTH_SHORT).show()
             }
+        }else{
+            Toast.makeText(this, "Biography must have 5 - 200 characters.", Toast.LENGTH_SHORT).show()
         }
     }
 
